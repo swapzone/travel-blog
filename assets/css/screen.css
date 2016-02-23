@@ -7860,6 +7860,30 @@ footer.single-page {
     font-size: 0.9rem;
     transform: translateY(-1px); }
 
+.tag-list {
+  list-style: none;
+  font-size: 1.8rem;
+  padding-left: 0;
+  margin-top: 1em; }
+  .tag-list li {
+    display: block;
+    padding-bottom: 1em; }
+    .tag-list li span {
+      display: block;
+      padding: 0.1em 0; }
+
+.tag-list {
+  list-style: none;
+  font-size: 1.8rem;
+  padding-left: 0;
+  margin-top: 1em; }
+  .tag-list li {
+    display: block;
+    padding-bottom: 1em; }
+    .tag-list li span {
+      display: block;
+      padding: 0.1em 0; }
+
 .no-js-menu ul {
   padding: 10px 0;
   margin-bottom: 0; }

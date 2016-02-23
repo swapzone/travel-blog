@@ -66,7 +66,7 @@ var s,
             return false;
 
         },
-        jpm: function(){
+        jpm: function() {
             // Off Screen Navigation Plugin
 
             s.jpm = $.jPanelMenu({
@@ -86,10 +86,31 @@ var s,
             });
 
             s.jpm.on();
+        },
+        loadTags: function(tagList) {
+
+            $.get(ghost.url.api('tags'))
+                .done(function(result) {
+
+                    var htmlString = "";
+
+                    result.tags.forEach(function(tag) {
+                        var url = '/tag/' + tag.slug;
+
+                        htmlString += "<li><a href='" + url + "'>" + tag.name + "</a>" +
+                            "<span>" + tag.description + "</span></li>";
+                    });
+
+                    $(tagList).html(htmlString);
+                });
         }
     };
 
 $(document).ready(function(){
     app.init();
+
+    var tagList = $('#tag-list');
+    if(tagList.length)
+        app.loadTags(tagList);
 });
 
