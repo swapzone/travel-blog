@@ -8,20 +8,23 @@
 <main class="container">
     <div class="row">
         <div class="col-xs-12 single-content">
+            <span class="back-link"><i class="fa fa-long-arrow-left"></i><a href="/">Back to overview</a></span>
+
+            <h1>{{title}}</h1>
+
             <p class="meta">
-                   {{! Everything inside the #author tags pulls data from the author }}
+                {{! Everything inside the #author tags pulls data from the author }}
                 {{#author}}
-                    <a href="{{url}}">{{name}}</a>
+                by <a href="{{url}}">{{name}}</a>
                 {{/author}}
                 {{tags prefix=" in "}}
                 <i class="link-spacer"></i>
                 <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMM YYYY"}}</time>
             </p>
 
-            <h1>{{title}}</h1>
+            {{content}}
 
-           {{content}}
-
+            <span class="back-link"><i class="fa fa-long-arrow-left"></i><a href="/">Back to overview</a></span>
         </div><!-- main-content/col -->
     </div> <!--/row -->
 

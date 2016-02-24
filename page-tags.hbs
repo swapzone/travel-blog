@@ -1,36 +1,26 @@
 {{!< default}}
-
-{{! This is a page template. A page outputs content just like any other post, and has all the same
-    attributes by default, but you can also customise it to behave differently if you prefer. }}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
 
 {{! Everything inside the #post tags pulls data from the page }}
 {{#post}}
 
-
-{{> full-header}}
-
-<main class="container">
+<main class="container left-container">
     <div class="row">
-        <div class="col-xs-12 single-content">
+        {{navigation}}
+        {{> sidebar}}
 
-            <h1>{{ title }}</h1>
+        <div class="col-md-8 col-sm-12 col-md-offset-5 main-content">
+            <div class="sub-nav">
+                <a href="/" class="select-posts active">{{ title }}</a>
+            </div>
 
             {{ content }}
 
             <div>
                 <ul id="tag-list" class="tag-list"></ul>
             </div>
-
-        </div><!-- main-content/col -->
+        </div><!-- main content -->
     </div> <!--/row -->
-
 </main> <!-- /container -->
-{{/post}}
 
-<footer class="single single-page">
-    <div class="container">
-        <div class="col-sm-12">
-            <p>{{@blog.description}}</p>
-        </div>
-    </div>
-</footer>
+{{/post}}
