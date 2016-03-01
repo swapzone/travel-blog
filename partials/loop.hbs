@@ -1,8 +1,8 @@
-<div class="animated fadeIn ">
+<div class="animated fadeIn">
     {{! This is the post loop - each post will be output using this markup }}
     {{#foreach posts}}
     <article class="post {{#if featured}}post--featured{{/if}}">
-        <div class="post-preview col-xs-10  no-gutter">
+        <div class="post-preview col-xs-10 no-gutter">
             <h2><a href="{{url}}">{{title}}</a></h2>
 
             <p>{{excerpt words="24"}}</p>
@@ -28,6 +28,10 @@
 
 
 <footer class="split-footer">
-    {{pagination}}
+    {{#if posts}}
+        {{pagination}}
+    {{else}}
+        Nothing to show.
+    {{/if}}
 </footer>
 
